@@ -1,8 +1,8 @@
-# Dr.Xi_grad
+# Dr.Xi Graduation Party
 
 A mini RSVP project for our proudly new graduate Dr.Xi in Occupational Therapy. This project is dedicated 
 to her graduation party to celebrate her new achievement. She has been working hard for this day for the last 
-couple years. 
+couple of years. 
 
 ### Features
 - lovely photos of our Dr. Xi 
