@@ -1,12 +1,44 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import '../styles/YesPage.css';
 
 function YesPage() {
+  const [fullName, setFullName] = useState('');
+  const [plusOne, setPlusOne] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch('http://localhost:3000/api/rsvp', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ fullName, plusOne }),
+    });
+
+    if (response.ok) {
+      setSubmitted(true);
+    } else {
+      alert('Failed to submit RSVP');
+    }
+  };
+
   return (
     <div className="yes-container">
-      <h2 className="yes-message">Awesome! We're glad you'll join us.</h2>
-      <Link to="/" className="link">Back to main page</Link>
+      <h1>Awesome! You're attending 🎉</h1>
+      {!submitted ? (
+        <form onSubmit={handleSubmit} className="yes-form">
+          <label>
+            Full Name:
+            <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} required />
+          </label>
+          <label>
+            Bringing a plus one?
+            <input type="checkbox" checked={plusOne} onChange={() => setPlusOne(!plusOne)} />
+          </label>
+          <button type="submit">Submit RSVP</button>
+        </form>
+      ) : (
+        <p>Thanks for RSVPing!</p>
+      )}
     </div>
   );
 }

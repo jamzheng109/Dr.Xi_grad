@@ -1,16 +1,41 @@
 .yes-container {
+  padding: 40px;
   text-align: center;
-  padding: 50px;
+  background-color: #f1f8e9;
+  min-height: 100vh;
+  font-family: 'Comic Neue', cursive, sans-serif;
 }
 
-.yes-message {
-  color: green;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+.yes-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-.link {
-  color: blue;
-  text-decoration: underline;
+.yes-form input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 250px;
+}
+
+.yes-form input[type="checkbox"] {
+  margin-left: 10px;
+}
+
+.yes-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  background-color: #43a047;
+  color: white;
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.yes-form button:hover {
+  background-color: #66bb6a;
 }
