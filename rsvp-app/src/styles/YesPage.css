@@ -1,0 +1,16 @@
+.yes-container {
+  text-align: center;
+  padding: 50px;
+}
+
+.yes-message {
+  color: green;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.link {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}

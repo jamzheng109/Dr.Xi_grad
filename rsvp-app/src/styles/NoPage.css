@@ -1,0 +1,16 @@
+.no-container {
+  text-align: center;
+  padding: 50px;
+}
+
+.no-message {
+  color: red;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.link {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
