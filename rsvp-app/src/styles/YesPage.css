@@ -39,3 +39,47 @@
 .yes-form button:hover {
   background-color: #66bb6a;
 }
+
+.yes-image {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.yes-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 480px) {
+  .yes-container {
+    padding: 40px 15px;
+  }
+
+  .yes-title {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+
+  .yes-image {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .yes-button-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .yes-button {
+    max-width: 100%;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1.1rem;
+  }
+}

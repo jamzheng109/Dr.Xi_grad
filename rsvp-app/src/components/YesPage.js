@@ -22,24 +22,25 @@ function YesPage() {
   };
 
   return (
-    <div className="yes-container">
-      <h1>Awesome! You're attending 🎉</h1>
-      {!submitted ? (
-        <form onSubmit={handleSubmit} className="yes-form">
-          <label>
-            Full Name:
-            <input type="text" value={fullName} onChange={e => setFullName(e.target.value)} required />
-          </label>
-          <label>
-            Bringing a plus one?
-            <input type="checkbox" checked={plusOne} onChange={() => setPlusOne(!plusOne)} />
-          </label>
-          <button type="submit">Submit RSVP</button>
-        </form>
-      ) : (
-        <p>Thanks for RSVPing!</p>
-      )}
-    </div>
+      <div className="yes-container">
+        <img src="/yes.JPG" alt="Event" className="yes-image"/>
+        <h1>Awesome! You're attending 🎉</h1>
+        {!submitted ? (
+            <form onSubmit={handleSubmit} className="yes-form">
+              <label>
+                Full Name:
+                <input type="text" value={fullName} onChange={e => setFullName(e.target.value)} required/>
+              </label>
+              <label>
+                Bringing a plus one?
+                <input type="checkbox" checked={plusOne} onChange={() => setPlusOne(!plusOne)}/>
+              </label>
+              <button type="submit">Submit RSVP</button>
+            </form>
+        ) : (
+            <p>Thanks for RSVPing!</p>
+        )}
+      </div>
   );
 }
 

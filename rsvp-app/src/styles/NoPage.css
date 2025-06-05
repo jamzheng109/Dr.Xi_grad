@@ -14,3 +14,32 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+@media (max-width: 480px) {
+  .no-container {
+    padding: 40px 15px;
+  }
+
+  .no-title {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+
+  .no-image {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .no-button-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .no-button {
+    max-width: 100%;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1.1rem;
+  }
+}
