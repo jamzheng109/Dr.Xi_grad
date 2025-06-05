@@ -1,31 +1,46 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
 require('dotenv').config();
-
-const RSVP = require('./models/RSVP');
+const express = require('express');
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const cors = require('cors');
 
 const app = express();
+const PORT = process.env.PORT || 5000;
+
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('✅ MongoDB connected'))
-.catch((err) => console.error('❌ MongoDB error', err));
+const uri = process.env.MONGO_URI;
 
-app.post('/api/rsvp', async (req, res) => {
-  const { fullName, plusOne } = req.body;
-  try {
-    const rsvp = new RSVP({ fullName, plusOne });
-    await rsvp.save();
-    res.status(200).json({ message: 'RSVP saved' });
-  } catch (err) {
-    res.status(500).json({ error: 'Error saving RSVP' });
-  }
+// Connect to MongoDB
+const client = new MongoClient(uri, {
+  serverApi: ServerApiVersion.v1
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+async function run() {
+  try {
+    await client.connect();
+    const db = client.db('xiparty'); // Use your database name
+    const rsvps = db.collection('guestlist'); // Use your collection name
+
+    console.log('✅ Connected to MongoDB');
+
+    app.post('/api/rsvp', async (req, res) => {
+      const { fullName, plusOne } = req.body;
+      try {
+        const result = await rsvps.insertOne({ fullName, plusOne });
+        res.status(201).json({ message: 'RSVP saved!', id: result.insertedId });
+      } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Error saving RSVP' });
+      }
+    });
+
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on port ${PORT}`);
+    });
+  } catch (err) {
+    console.error('❌ MongoDB connection error:', err);
+  }
+}
+
+run().catch(console.dir);

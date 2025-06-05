@@ -8,7 +8,7 @@ function YesPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:3000/api/rsvp', {
+    const response = await fetch('http://localhost:5000/api/rsvp', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ fullName, plusOne }),
@@ -28,7 +28,7 @@ function YesPage() {
         <form onSubmit={handleSubmit} className="yes-form">
           <label>
             Full Name:
-            <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} required />
+            <input type="text" value={fullName} onChange={e => setFullName(e.target.value)} required />
           </label>
           <label>
             Bringing a plus one?
