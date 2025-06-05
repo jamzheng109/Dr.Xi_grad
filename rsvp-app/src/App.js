@@ -6,7 +6,7 @@ import NoPage from './components/NoPage';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Dr.Xi_grad">
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/yes" element={<YesPage />} />
