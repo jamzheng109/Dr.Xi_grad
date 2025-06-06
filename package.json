@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://jamzheng109.github.io/Dr.Xi_grad",
+  "engines": {
+  "node": "22.x",
+  "npm": "10.x"
+  },
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -17,9 +21,9 @@
   },
   "scripts": {
     "start": "node server/server.js",
-    "build": "react-scripts server/build",
+    "build": "react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d server/build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
