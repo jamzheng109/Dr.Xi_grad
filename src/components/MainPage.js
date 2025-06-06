@@ -7,7 +7,7 @@ function MainPage() {
 
   return (
       <div className="main-container">
-          <img src="/grad.JPG" alt="Event" className="main-image"/>
+          <img src={`${process.env.PUBLIC_URL}/grad.JPG`} className="main-image"/>
           <h1>RSVP FOR DR. XI's GRADUATION PARTY!!!</h1>
           <h1 className="main-title">Will you be attending the event on June 11 @6pm?</h1>
           <button onClick={() => navigate('/yes')} className="button button-yes">
