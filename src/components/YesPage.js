@@ -9,7 +9,7 @@ function YesPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:5000/api/rsvp', {
+    const response = await fetch('https://salty-plateau-65885-ffc3600ffa8c.herokuapp.com/api/rsvp', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ fullName, plusOne }),

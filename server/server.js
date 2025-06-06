@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -33,6 +34,13 @@ async function run() {
         console.error(err);
         res.status(500).json({ error: 'Error saving RSVP' });
       }
+    });
+
+    app.use(express.static(path.join(__dirname, 'build')));
+
+    // Send React app for all other routes not handled above (like client side routing)
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, 'build', 'index.html'));
     });
 
     app.listen(PORT, () => {
