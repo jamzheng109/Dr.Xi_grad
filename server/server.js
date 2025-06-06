@@ -25,6 +25,10 @@ const client = new MongoClient(uri, {
   serverApi: ServerApiVersion.v1
 });
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the RSVP API!');
+});
+
 async function run() {
   try {
     await client.connect();
