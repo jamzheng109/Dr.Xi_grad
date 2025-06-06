@@ -13,6 +13,13 @@ app.use(express.json());
 const uri = process.env.MONGO_URI;
 console.log('Connecting to MongoDB with URI:', uri);
 
+const options = {
+  tls: true,
+  tlsAllowInvalidCertificates: false,
+  tlsInsecure: false,
+  minVersion: 'TLSv1.2'
+};
+
 // Connect to MongoDB
 const client = new MongoClient(uri, {
   serverApi: ServerApiVersion.v1
