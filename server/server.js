@@ -36,13 +36,6 @@ async function run() {
       }
     });
 
-    app.use(express.static(path.join(__dirname, 'build')));
-
-    // Send React app for all other routes not handled above (like client side routing)
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(__dirname, 'build', 'index.html'));
-    });
-
     app.listen(PORT, () => {
       console.log(`🚀 Server running on port ${PORT}`);
     });
