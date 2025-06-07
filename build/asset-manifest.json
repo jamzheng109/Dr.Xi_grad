@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Dr.Xi_grad/static/css/main.5ef8e262.css",
+    "main.css": "/Dr.Xi_grad/static/css/main.940a1ba2.css",
     "main.js": "/Dr.Xi_grad/static/js/main.6a85a230.js",
     "index.html": "/Dr.Xi_grad/index.html",
-    "main.5ef8e262.css.map": "/Dr.Xi_grad/static/css/main.5ef8e262.css.map",
+    "main.940a1ba2.css.map": "/Dr.Xi_grad/static/css/main.940a1ba2.css.map",
     "main.6a85a230.js.map": "/Dr.Xi_grad/static/js/main.6a85a230.js.map"
   },
   "entrypoints": [
-    "static/css/main.5ef8e262.css",
+    "static/css/main.940a1ba2.css",
     "static/js/main.6a85a230.js"
   ]
 }

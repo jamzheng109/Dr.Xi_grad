@@ -19,6 +19,10 @@ function MainPage() {
           <button onClick={() => navigate('/no')} className="button button-no">
               No
           </button>
+
+          <div className="star" style={{top: '20%', left: '10%'}}></div>
+          <div className="star" style={{top: '60%', left: '80%'}}></div>
+          <div className="star" style={{top: '40%', left: '50%'}}></div>
       </div>
   );
 }
